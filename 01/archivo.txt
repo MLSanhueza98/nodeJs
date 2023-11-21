@@ -1,0 +1,5 @@
+casa
+lapiz
+libreta
+jarro
+botella

@@ -1,0 +1,6 @@
+perro
+gato
+gallina
+cocodrilo
+elefante
+murcielago
