@@ -1,6 +1,26 @@
-apuntes nodeJS
-
-01: CommonJS - ESModules - FileSystem - Callbacks - Path - Asíncrono vs Síncrono - NPM.
-02: Protocolo HTTP - statusCode - Cabeceras - Buffer - Express. Creacion de API.
-03: REST API (principios y fundamentos) - Methods (GET, POST, PUT, PATCH) - CORS. Desarrollo de API
-04: CommonJS a ESModules - Importar archivos Json (2 formas) - Router (express) - MVC. 
+Apuntes NodeJS
+01: Fundamentos
+CommonJS
+ESModules
+FileSystem
+Callbacks
+Path
+Asíncrono vs Síncrono
+NPM
+02: Protocolo HTTP y Express
+HTTP Protocol
+Status Code
+Cabeceras
+Buffer
+Express
+Creación de API
+03: RESTful API
+Principios y fundamentos
+Métodos (GET, POST, PUT, PATCH)
+CORS
+Desarrollo de API
+04: NodeJS Avanzado
+Migración de CommonJS a ESModules
+Importar archivos JSON (2 formas)
+Router (Express)
+Modelo-Vista-Controlador (MVC)
