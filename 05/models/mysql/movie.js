@@ -68,7 +68,7 @@ export class MovieModel {
     // Implementación de create
     const connection = await pool.getConnection()
     const {
-      genre: genreInput, // genre is an array
+      // genre: genreInput, // genre is an array
       title,
       year,
       duration,
