@@ -108,9 +108,50 @@ export class MovieModel {
 
   static async delete ({ id }) {
     // Implementación de delete
+    const connection = await pool.getConnection()
+    try {
+      const movieDeleted = await connection.query(
+        'DELETE FROM movie WHERE id = UUID_TO_BIN(?);', [id]
+      )
+      return movieDeleted
+    } finally {
+      connection.release()
+    }
   }
 
   static async update ({ id, input }) {
-    // Implementación de update
+    const connection = await pool.getConnection()
+
+    try {
+      const {
+        title,
+        year,
+        duration,
+        director,
+        rate,
+        poster
+      } = input
+
+      // Actualizar la película
+      await connection.query(
+        'UPDATE movie SET title = ?, year = ?, director = ?, duration = ?, poster = ?, rate = ? WHERE id = UUID_TO_BIN(?);',
+        [title, year, director, duration, poster, rate, id]
+      )
+
+      // Obtener la película actualizada
+      const [updatedMovies] = await connection.query(
+        'SELECT title, year, director, duration, poster, rate, BIN_TO_UUID(id) id FROM movie WHERE id = UUID_TO_BIN(?);',
+        [id]
+      )
+
+      if (updatedMovies.length === 0) {
+        // Manejar el caso en el que la película no se encuentra después de la actualización
+        return null
+      }
+
+      return updatedMovies[0]
+    } finally {
+      connection.release()
+    }
   }
 }
