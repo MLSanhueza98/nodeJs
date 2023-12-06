@@ -31,3 +31,8 @@
 
 ---
 
+### **05: MySQL y NodeJS**
+- Conexión y creación de tablas
+- SELECT, INSERT, DELETE y JOIN
+- Inyección de dependencias
+
